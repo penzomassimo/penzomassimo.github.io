@@ -114,6 +114,29 @@ Follow me:
   
   <div class="article_text" id="post">
     <p>Lorem ipsum dolor sit amet, sit probo discere ne, nec iusto eruditi vivendum ut. Menandri conclusionemque sea cu. Libris percipitur nam ad, sint alienum mediocrem usu et, sit sonet moderatius comprehensam id. Accumsan salutatus ea est, aliquam adipisci tincidunt duo cu. Cum ad homero lobortis, mea oratio assueverit efficiantur cu, affert consequat usu cu.</p>
+<p><code>print("The path-less shebang syntax *will* show line numbers.")</code></p>
+<div class="highlight"><pre><span></span>x = 1
+if x == 1:
+    # indented four spaces
+    print(&quot;x is 1.&quot;)
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Resnet18 model</span>
+<span class="sd">    pretrained (bool): a recommended kwargs for all entrypoints</span>
+<span class="sd">    args &amp; kwargs are arguments for the function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">torchvision.models.resnet</span> <span class="kn">import</span> <span class="n">resnet18</span> <span class="k">as</span> <span class="n">_resnet18</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">_resnet18</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">checkpoint</span> <span class="o">=</span> <span class="s1">&#39;https://download.pytorch.org/models/resnet18-5c106cde.pth&#39;</span>
+    <span class="k">if</span> <span class="n">pretrained</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">model_zoo</span><span class="o">.</span><span class="n">load_url</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+
+
 <p>Ceteros definiebas vel an, viderer disputando has ea, ei omnes lobortis cum. Soluta vulputate theophrastus ad per. Explicari disputationi reprehendunt te eam. Eum exerci vivendum no. Cu est odio sint, cum ne quot minim saepe. In eius epicurei mei, pri alii mundi facete ei, bonorum corpora ad sea.</p>
 <p>Cum id euismod ullamcorper. Eam harum urbanitas ne. Id vel erat scripta assueverit, natum iriure imperdiet pri ei. Per eu eius facilis, at cum oratio probatus nominati, est ei ridens dicunt phaedrum. Ne sea harum blandit maiestatis.</p>
 <p>Pri in commodo democritum elaboraret. Sit mundi dolor temporibus te, sea ut utinam nominati. Tota laoreet veritus vel id, te cum admodum omittam, eripuit legimus at pri. Vim dolor commodo reprehendunt at, vel an fuisset praesent, affert veniam has eu.</p>
