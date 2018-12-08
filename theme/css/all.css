@@ -586,7 +586,7 @@ background-color: white;
 color: #222222;
 line-height: 24px;
 margin: 0;
-border-top: 7px solid #507d3e;
+border-top: 7px solid #5f6368;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -621,17 +621,17 @@ list-style: disc;
 }
 
 a {
-color: #507d3e;
+color: #5f6368;
 text-decoration: none;
 }
 
 a:hover {
-color: #507d3e;
+color: #5f6368;
 text-decoration: underline;
 }
 
 a:visited {
-color: #507d3e;
+color: #5f6368;
 }
 
 table {
@@ -763,7 +763,7 @@ color: #666;
 }
 
 #home h2 {
-color: #507d3e;
+color: #5f6368;
 }
 
 #logo, #gravatar {
@@ -796,7 +796,7 @@ margin-right: 5px;
 
 #stalker a:hover {
 text-decoration: none;
-color: #507d3e;
+color: #5f6368;
 }
 
 i.fa-hn {
