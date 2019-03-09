@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="massimo_penzo">
+  <meta name="description" content="Posts and writings by massimo_penzo">
+  <title>
+    penzomassimo
+&ndash; What are Q-Q Plots  </title>
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
+
+  <link rel="shortcut icon" href="/theme/images/logo.png">
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/all.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/custom.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+<meta name="keywords" content="">
+</head>
+<body>
+  <div class="container">
+    <div class="four columns sidebar">
+<nav>
+  <!-- <h1>Hi.</h1> -->
+  <a href="/">
+    <img src="/theme/images/my_logo.png" id="gravatar" alt="My photo"/>
+  </a>
+  <h2><a href="/">I'm massimo_penzo</a></h2>
+
+  <div id="bio">
+    <p>Ceteros definiebas vel an, viderer disputando has ea, ei omnes lobortis cum.</p>
+  </div>
+
+  <div id="social">
+Follow me:
+<div id="stalker">
+
+  <a title="# on Gitlab" href="https://gitlab.com/#">
+    <i class="fa fa-gitlab"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a title="# on Github" href="https://github.com/#">
+    <i class="fa fa-github"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a title="# on Bitbucket" href="https://bitbucket.com/#/">
+    <i class="fa fa-bitbucket"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>  </div>
+
+  <div id="tags">
+    <ul>
+      <li><a href="/pages/about-me.html">About me</a></li>
+      </ul>
+  </div>
+</nav>    </div>
+
+    <div class="eleven columns content">
+  <p class="meta">
+    16 December 2018
+<!--     <a href="/">
+      <i class="home fa fa-home"></i>
+    </a>
+ -->  </p>
+
+  <h1 class="title"><a href="/what-are-q-q-plots.html">What are Q-Q Plots</a></h1>
+  
+  <div class="article_text" id="post">
+    <p>This is a Q-Q Plot:</p>
+<p><img alt="Alt Text" src="/images/qq_plot.png" /></p>
+<p>A Quantile-Quantile plot is a graphical techinique used to determine if two datasets come from populations with a common distribution.</p>
+<p>A q-q plot is a plot of the quantiles of the first data set against the quantiles of the second data set. By a quantile, we mean the fraction (or percent) of points below the given value. That is, the 0.3 (or 30%) quantile is the point at which 30% percent of the data fall below and 70% fall above that value.</p>
+<p>A 45-degree reference line is also plotted. If the two sets come from a population with the same distribution, the points should fall approximately along this reference line. The greater the departure from this reference line, the greater the evidence for the conclusion that the two data sets have come from populations with different distributions.</p>
+<div class="highlight"><pre><span></span>+----------------------------------+---------+------------------------+
+|               Col1               |  Col2   |          Col3          |
++----------------------------------+---------+------------------------+
+| Value 1                          | Value 2 | 123                    |
+| Separate                         | cols    | with a tab or 4 spaces |
+| This is a row with only one cell |         |                        |
++----------------------------------+---------+------------------------+
+</pre></div>
+
+
+<p>So, what is a quantile?</p>
+<p>In general we can say that quantiles are just lines that divide the dataset in equally sized groups.
+For example, the 0.5 quantile is a line where 50% of the data is above it and 50% of the data is below it.</p>
+<p>Common Quantiles</p>
+<p>Certain types of quantiles are used commonly enough to have specific names. Below is a list of these:</p>
+<ul>
+<li>The 2 quantile is called the median</li>
+<li>The 3 quantiles are called terciles</li>
+<li>The 4 quantiles are called quartiles</li>
+<li>The 5 quantiles are called quintiles</li>
+<li>The 6 quantiles are called sextiles</li>
+<li>The 7 quantiles are called septiles</li>
+<li>The 8 quantiles are called octiles</li>
+<li>The 10 quantiles are called deciles</li>
+<li>The 12 quantiles are called duodeciles</li>
+<li>The 20 quantiles are called vigintiles</li>
+<li>The 100 quantiles are called percentiles</li>
+<li>The 1000 quantiles are called permilles</li>
+</ul>
+<p>Here is how you calculate quantiles of the <code>petal_lentgh</code> variable in a pandas dataframe in Python:</p>
+<div class="highlight"><pre><span></span>df[&#39;petal_length&#39;].quantile([0.25, 0.50, 0.75])
+
+0.25    1.60
+0.50    4.35
+0.75    5.10
+Name: petal_length, dtype: float64
+</pre></div>
+
+
+<p>Here we have just calculated the <code>0.25</code>, <code>0.50</code> and <code>0.75</code> quantiles</p>
+<h4>How to build a Q-Q Plot</h4>
+  </div>
+
+  <div class="article_meta related">
+    <h3>Category: </h3>
+    <span><a href="/category/concepts.html">concepts</span>
+    
+  </div>
+
+
+
+      <!-- <div class="footer">
+<div class="disclaimer">
+  
+    <p>
+      © massimo_penzo,  &mdash; built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/karambir/taman" target="_blank">Taman</a>, a port of jekyll theme <a href="https://github.com/swanson/lagom" target="_blank">Lagom</a>.
+    </p>
+  </div>      </div> -->
+    </div>
+  </div>
+
+</body>
+</html>

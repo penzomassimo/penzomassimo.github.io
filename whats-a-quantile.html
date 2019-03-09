@@ -10,7 +10,7 @@
   <meta name="description" content="Posts and writings by massimo_penzo">
   <title>
     penzomassimo
-&ndash; Tags  </title>
+&ndash; What's a Quantile?  </title>
 
   <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="/theme/css/custom.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   
+<meta name="keywords" content="">
 </head>
 <body>
   <div class="container">
@@ -102,11 +103,54 @@ Follow me:
 </nav>    </div>
 
     <div class="eleven columns content">
-<div id="home">
-  <h2><i class="fa fa-bookmark"></i> Blog Posts </h2>
-  <ul class="posts">
-  </ul>
-</div>
+  <p class="meta">
+    16 December 2018
+<!--     <a href="/">
+      <i class="home fa fa-home"></i>
+    </a>
+ -->  </p>
+
+  <h1 class="title"><a href="/whats-a-quantile.html">What's a Quantile?</a></h1>
+  
+  <div class="article_text" id="post">
+    <p>So, what is a quantile?</p>
+<p>In general we can say that quantiles are just lines that divide the dataset in equally sized groups.
+For example, the 0.5 quantile is a line where 50% of the data is above it and 50% of the data is below it.</p>
+<p>Common Quantiles</p>
+<p>Certain types of quantiles are used commonly enough to have specific names. Below is a list of these:</p>
+<ul>
+<li>The 2 quantile is called the median</li>
+<li>The 3 quantiles are called terciles</li>
+<li>The 4 quantiles are called quartiles</li>
+<li>The 5 quantiles are called quintiles</li>
+<li>The 6 quantiles are called sextiles</li>
+<li>The 7 quantiles are called septiles</li>
+<li>The 8 quantiles are called octiles</li>
+<li>The 10 quantiles are called deciles</li>
+<li>The 12 quantiles are called duodeciles</li>
+<li>The 20 quantiles are called vigintiles</li>
+<li>The 100 quantiles are called percentiles</li>
+<li>The 1000 quantiles are called permilles</li>
+</ul>
+<p>Here is how you calculate quantiles of the <code>petal_lentgh</code> variable in a pandas dataframe in Python:</p>
+<div class="highlight"><pre><span></span>df[&#39;petal_length&#39;].quantile([0.25, 0.50, 0.75])
+
+0.25    1.60
+0.50    4.35
+0.75    5.10
+Name: petal_length, dtype: float64
+</pre></div>
+
+
+<p>Here we have just calculated the <code>0.25</code>, <code>0.50</code> and <code>0.75</code> quantiles</p>
+  </div>
+
+  <div class="article_meta related">
+    <h3>Category: </h3>
+    <span><a href="/category/concepts.html">concepts</span>
+    
+  </div>
+
 
 
       <!-- <div class="footer">

@@ -10,7 +10,7 @@
   <meta name="description" content="Posts and writings by massimo_penzo">
   <title>
     penzomassimo
-&ndash; Tags  </title>
+&ndash; What are Quantile-Quantile (QQ) Plots  </title>
 
   <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="/theme/css/custom.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   
+<meta name="keywords" content="">
 </head>
 <body>
   <div class="container">
@@ -31,7 +32,7 @@
   <a href="/">
     <img src="/theme/images/my_logo.png" id="gravatar" alt="My photo"/>
   </a>
-  <h2><a href="/">massimo_penzo</a></h2>
+  <h2><a href="/">I'm massimo_penzo</a></h2>
 
   <div id="bio">
     <p>Ceteros definiebas vel an, viderer disputando has ea, ei omnes lobortis cum.</p>
@@ -102,11 +103,42 @@ Follow me:
 </nav>    </div>
 
     <div class="eleven columns content">
-<div id="home">
-  <h2><i class="fa fa-bookmark"></i> Blog Posts </h2>
-  <ul class="posts">
-  </ul>
-</div>
+  <p class="meta">
+    16 December 2018
+<!--     <a href="/">
+      <i class="home fa fa-home"></i>
+    </a>
+ -->  </p>
+
+  <h1 class="title"><a href="/drafts/what-are-quantile-quantile-qq-plots.html">What are Quantile-Quantile (QQ) Plots</a></h1>
+  
+  <div class="article_text" id="post">
+    <p>This is a Q-Q Plot:</p>
+<p><img alt="Alt Text" src="/images/qq_plot.png" /></p>
+<p>A QQ-plot is a graphical technique used to determine if two datasets come from populations with a common distribution.</p>
+<p>QQ-plots are often used to determine whether a dataset is normally distributed. As the name suggests, the horizontal and vertical axes of a QQ-plot are used to show quantiles.</p>
+<p>A QQ-plot is a scatter plot of the quantiles of the first data set against the quantiles of the second data set. By a quantile, we mean the fraction (or percent) of points below the given value. That is, the 0.3 (or 30%) quantile is the point at which 30% percent of the data fall below and 70% fall above that value.</p>
+<p>A 45-degree reference line is also plotted. If the two sets come from a population with the same distribution, the points should fall approximately along this reference line. The greater the departure from this reference line, the greater the evidence for the conclusion that the two data sets have come from populations with different distributions.</p>
+<p><a href="/whats-a-quantile.html">For information about quantiles follow this link</a></p>
+<div class="highlight"><pre><span></span>+----------------------------------+---------+------------------------+
+|               Col1               |  Col2   |          Col3          |
++----------------------------------+---------+------------------------+
+| Value 1                          | Value 2 | 123                    |
+| Separate                         | cols    | with a tab or 4 spaces |
+| This is a row with only one cell |         |                        |
++----------------------------------+---------+------------------------+
+</pre></div>
+
+
+<h4>How to build a Q-Q Plot</h4>
+  </div>
+
+  <div class="article_meta related">
+    <h3>Category: </h3>
+    <span><a href="/category/concepts.html">concepts</span>
+    
+  </div>
+
 
 
       <!-- <div class="footer">

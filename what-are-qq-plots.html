@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="massimo_penzo">
+  <meta name="description" content="Posts and writings by massimo_penzo">
+  <title>
+    penzomassimo
+&ndash; What are QQ-Plots  </title>
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
+
+  <link rel="shortcut icon" href="/theme/images/logo.png">
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/all.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/custom.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+<meta name="keywords" content="">
+</head>
+<body>
+  <div class="container">
+    <div class="four columns sidebar">
+<nav>
+  <!-- <h1>Hi.</h1> -->
+  <a href="/">
+    <img src="/theme/images/my_logo.png" id="gravatar" alt="My photo"/>
+  </a>
+  <h2><a href="/">massimo_penzo</a></h2>
+
+  <div id="bio">
+    <p>Ceteros definiebas vel an, viderer disputando has ea, ei omnes lobortis cum.</p>
+  </div>
+
+  <div id="social">
+Follow me:
+<div id="stalker">
+
+  <a title="# on Gitlab" href="https://gitlab.com/#">
+    <i class="fa fa-gitlab"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a title="# on Github" href="https://github.com/#">
+    <i class="fa fa-github"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a title="# on Bitbucket" href="https://bitbucket.com/#/">
+    <i class="fa fa-bitbucket"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>  </div>
+
+  <div id="tags">
+    <ul>
+      <li><a href="/pages/about-me.html">About me</a></li>
+      </ul>
+  </div>
+</nav>    </div>
+
+    <div class="eleven columns content">
+  <p class="meta">
+    16 December 2018
+<!--     <a href="/">
+      <i class="home fa fa-home"></i>
+    </a>
+ -->  </p>
+
+  <h1 class="title"><a href="/what-are-qq-plots.html">What are QQ-Plots</a></h1>
+  
+  <div class="article_text" id="post">
+    <h4>Intuition</h4>
+<p>A QQ-plot is a graphical technique used to determine if two datasets come from populations with a common distribution.</p>
+<p>QQ-plots are often used to determine whether a dataset is normally distributed. As the name suggests, the horizontal and vertical axes of a QQ-plot are used to show quantiles.</p>
+<p>A QQ-plot is a scatter plot of the quantiles of the first data set against the quantiles of the second data set. By a quantile, we mean the fraction (or percent) of points below the given value. That is, the 0.3 (or 30%) quantile is the point at which 30% percent of the data fall below and 70% fall above that value.</p>
+<p>A 45-degree reference line is also plotted. If the two sets come from a population with the same distribution, the points should fall approximately along this reference line. The greater the departure from this reference line, the greater the evidence for the conclusion that the two data sets have come from populations with different distributions.</p>
+<p><a href="/whats-a-quantile.html">For information about quantiles follow this link</a></p>
+<h4>Theory</h4>
+<div class="math">$$
+Z = 2
+$$</div>
+<h4>How to build a QQ-Plot in R</h4>
+<div class="highlight"><pre><span></span>my_data <span class="o">&lt;-</span> ToothGrowth
+qqnorm<span class="p">(</span>my_data<span class="o">$</span>len<span class="p">,</span> pch <span class="o">=</span> <span class="m">1</span><span class="p">,</span> frame <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+qqline<span class="p">(</span>my_data<span class="o">$</span>len<span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;steelblue&quot;</span><span class="p">,</span> lwd <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>And this is what we get:</p>
+<p><img alt="Alt Text" src="/images/qq_plot.svg" /></p>
+<h4>How to build a QQ-Plot in R</h4>
+<div class="highlight"><pre><span></span>+----+------+-------+
+| i  |  yi  |  zi   |
++----+------+-------+
+|  1 | 21.7 | -1.64 |
+|  2 | 22.4 | -1.04 |
+|  3 | 22.8 | -0.67 |
+|  4 |   25 | -0.39 |
+|  5 |   25 | -0.13 |
+|  6 | 25.9 |  0.13 |
+|  7 | 25.9 |  0.39 |
+|  8 | 26.4 |  0.67 |
+|  9 | 27.7 |  1.04 |
+| 10 | 28.9 |  1.64 |
++----+------+-------+
+</pre></div>
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+
+  <div class="article_meta related">
+    <h3>Category: </h3>
+    <span><a href="/category/concepts.html">concepts</span>
+    
+  </div>
+
+
+
+      <!-- <div class="footer">
+<div class="disclaimer">
+  
+    <p>
+      © massimo_penzo,  &mdash; built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/karambir/taman" target="_blank">Taman</a>, a port of jekyll theme <a href="https://github.com/swanson/lagom" target="_blank">Lagom</a>.
+    </p>
+  </div>      </div> -->
+    </div>
+  </div>
+
+</body>
+</html>
