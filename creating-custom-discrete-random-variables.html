@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="massimo_penzo">
+  <meta name="description" content="Posts and writings by massimo_penzo">
+  <title>
+    penzomassimo
+&ndash; Creating Custom Discrete Random Variables  </title>
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
+
+  <link rel="shortcut icon" href="/theme/images/logo.png">
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/all.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/custom.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+<meta name="keywords" content="">
+</head>
+<body>
+  <div class="container">
+    <div class="four columns sidebar">
+<nav>
+  <!-- <h1>Hi.</h1> -->
+  <a href="/">
+    <img src="/theme/images/my_logo.png" id="gravatar" alt="My photo"/>
+  </a>
+  <h2><a href="/">massimo_penzo</a></h2>
+
+  <div id="bio">
+    <p>Ceteros definiebas vel an, viderer disputando has ea, ei omnes lobortis cum.</p>
+  </div>
+
+  <div id="social">
+Follow me:
+<div id="stalker">
+
+  <a title="# on Gitlab" href="https://gitlab.com/#">
+    <i class="fa fa-gitlab"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a title="# on Github" href="https://github.com/#">
+    <i class="fa fa-github"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a title="# on Bitbucket" href="https://bitbucket.com/#/">
+    <i class="fa fa-bitbucket"></i>
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>  </div>
+
+  <div id="tags">
+    <ul>
+      <li><a href="/pages/about-me.html">About me</a></li>
+      </ul>
+  </div>
+</nav>    </div>
+
+    <div class="eleven columns content">
+  <p class="meta">
+    09 March 2019
+<!--     <a href="/">
+      <i class="home fa fa-home"></i>
+    </a>
+ -->  </p>
+
+  <h1 class="title"><a href="/creating-custom-discrete-random-variables.html">Creating Custom Discrete Random Variables</a></h1>
+  
+  <div class="article_text" id="post">
+    <h4>What are we going to do?</h4>
+<p>Today we are gonna be doing three things:</p>
+<ol>
+<li>We will learn how to model a custom discrete random variable and how to assign probabilities to each of its possible values.</li>
+<li>Then we will learn how to plot the probability function (p.f.) of this random variable.</li>
+<li>Finally we will learn how to take samples of different sizes from it.</li>
+</ol>
+<p>Of course we will be using R to explain how all this is done, so let's start.</p>
+<p>The first thing we need to do is define via a vector what are the possible values the discrete random variable you want to create can take, in our case we will just assume it can only take the values 0, 1, 2, 3 and 4. Here is how we do it in R:</p>
+<div class="highlight"><pre><span></span>random.var <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Given that the p.f. is the assignment of probabilities to each one of the possible values of the random variable, the next logical step is to create a vector with all these probabilities:</p>
+<div class="highlight"><pre><span></span>random.var.probs <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.4</span><span class="p">,</span> <span class="m">0.1</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Important: note how the sum of all the probabilities in the vector is 1</p>
+<p>Perfect, so, now we have all we need to plot the p.f. for our discrete random variable. I am gonna be using R's standard plotting functions for this:</p>
+<div class="highlight"><pre><span></span>plot(random.var, 
+     random.var.probs, 
+     type=&quot;h&quot;, 
+     xlim=c(0,4), 
+     ylim=c(0,1), 
+     lwd=2, 
+     col=&quot;black&quot;, 
+     ylab=&quot;Probability&quot;, 
+     main = &quot;p.f. for random.var&quot;)
+
+points(random.var, 
+       random.var.probs, 
+       pch=16, 
+       cex=1, 
+       col=&quot;black&quot;)
+</pre></div>
+
+
+<p>This is how the p.f. looks like:</p>
+<p><img alt="Alt Text" src="/images/pf_discrete_rv.png" /></p>
+<p>Last thing we are going to do is get a sample of size 5000 from our random variable and plot the corresponding histogram:</p>
+<div class="highlight"><pre><span></span>random.var.sample <span class="o">&lt;-</span> <span class="kp">sample</span><span class="p">(</span>random.var<span class="p">,</span> 
+                            <span class="m">5000</span><span class="p">,</span> 
+                            replace<span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> 
+                            prob<span class="o">=</span>random.var.probs<span class="p">)</span>
+
+hist<span class="p">(</span>random.var.sample<span class="p">,</span> breaks <span class="o">=</span> <span class="m">20</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Here is our histogram:</p>
+<p><img alt="Alt Text" src="/images/discrete_rv_sample_hist.png" /></p>
+<p>Thanks!</p>
+  </div>
+
+  <div class="article_meta related">
+    <h3>Category: </h3>
+    <span><a href="/category/r.html">R</span>
+    
+  </div>
+
+
+
+      <!-- <div class="footer">
+<div class="disclaimer">
+  
+    <p>
+      © massimo_penzo,  &mdash; built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="https://github.com/karambir/taman" target="_blank">Taman</a>, a port of jekyll theme <a href="https://github.com/swanson/lagom" target="_blank">Lagom</a>.
+    </p>
+  </div>      </div> -->
+    </div>
+  </div>
+
+</body>
+</html>
