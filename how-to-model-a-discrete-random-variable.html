@@ -35,7 +35,7 @@
   <h2><a href="/">massimo_penzo</a></h2>
 
   <div id="bio">
-    <p>Ceteros definiebas vel an, viderer disputando has ea, ei omnes lobortis cum.</p>
+    <p>Just a simple blog on R statistics</p>
   </div>
 
   <div id="social">
@@ -121,6 +121,7 @@ Follow me:
 <li>Finally we will learn how to take samples of different sizes from it.</li>
 </ol>
 <p>Of course we will be using R to explain how all this is done, so let's start.</p>
+<h4>Defining values and probabilities</h4>
 <p>The first thing we need to do is define via a vector what are the possible values the discrete random variable you want to create can take, in our case we will just assume it can only take the values 0, 1, 2, 3 and 4. Here is how we do it in R:</p>
 <div class="highlight"><pre><span></span>random.var <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
 </pre></div>
@@ -132,6 +133,7 @@ Follow me:
 
 
 <p>Important: note how the sum of all the probabilities in the vector is 1</p>
+<h4>Plotting the probability function</h4>
 <p>Perfect, so, now we have all we need to plot the p.f. for our discrete random variable. I am gonna be using R's standard plotting functions for this:</p>
 <div class="highlight"><pre><span></span>plot(random.var, 
      random.var.probs, 
@@ -153,6 +155,7 @@ points(random.var,
 
 <p>This is how the p.f. looks like:</p>
 <p><img alt="Alt Text" src="/images/pf_discrete_rv.png" /></p>
+<h4>Sampling from our variable</h4>
 <p>Last thing we are going to do is get a sample of size 5000 from our random variable and plot the corresponding histogram:</p>
 <div class="highlight"><pre><span></span>random.var.sample <span class="o">&lt;-</span> <span class="kp">sample</span><span class="p">(</span>random.var<span class="p">,</span> 
                             <span class="m">5000</span><span class="p">,</span> 
